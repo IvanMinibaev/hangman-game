@@ -4,7 +4,7 @@ from typing import List, Set
 
 # Константы и данные
 MAX_ATTEMPTS = 5
-ALPHABET = ["А",'Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ь','Э','Ю','Я']
+ALPHABET = ['А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ь','Э','Ю','Я']
 WORDS = [
     "ПРОГРАММИРОВАНИЕ", "АЛГОРИТМ", "КОМПЬЮТЕР", "ВИСЕЛИЦА", 
     "СТУДЕНТ", "УНИВЕРСИТЕТ", "ЛЕКЦИЯ", "ПРАКТИКА", 
@@ -35,7 +35,6 @@ def main():
         game_won = False
         letter = ""
         bonus = 0
-        print(secret_word)
         # Игровой цикл
         while attempts_left > 0:
            
@@ -55,16 +54,16 @@ def main():
             
             guessed_letters.add(letter)
             bonus = 0
-            for i in range (0,len(secret_word)):
-                 if(secret_word[i]==letter):
+            for i in range (0, len(secret_word)):
+                 if(secret_word[i] == letter):
                       
-                       if i+1== len(secret_word):
+                       if i+1 == len(secret_word):
                            guessed_word = guessed_word[:i]+letter
                        else:
                            guessed_word = guessed_word[:i]+letter+guessed_word[i+1:]
-                       bonus=1
+                       bonus = 1
             
-            attempts_left=attempts_left+bonus-1
+            attempts_left = attempts_left + bonus-1
            
             if bonus:
                 print("Вы угадали!")
